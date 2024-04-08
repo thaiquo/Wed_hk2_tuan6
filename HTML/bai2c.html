@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="box"
+      style="
+        display: inline-block;
+        width: auto;
+        height: auto;
+        border: 1px solid #000;
+        padding: 5px;
+      "
+    >
+      <p>Chon loai cafe:</p>
+      <input type="checkbox" class="checkbox" name="Trung Nguyen" id="" />Trung
+      Nguyen
+      <br />
+      <input type="checkbox" class="checkbox" name="Me Kong" id="" />Me Kong
+      <br />
+      <input type="checkbox" class="checkbox" name="New Life" id="" />New Life
+      <br />
+      <input type="checkbox" class="checkbox" name="Ocean Blue" id="" />Ocean
+      Blue
+      <br />
+      <input type="checkbox" class="checkbox" name="Blue Space" id="" />Blue
+      Space
+      <br />
+      <input type="checkbox" class="checkbox" name="Windows" id="" />"Windows"
+      <button onclick="run2()">Chon</button>
+      <br />
+      <p>Bạn chọn cafe: <span id="list" style="color: red"></span></p>
+    </div>
+    <script>
+      function run() {
+        const arr = [];
+        const x = document.getElementsByClassName("checkbox");
+        for (i = 0; i < x.length; i++) {
+          if (x[i].checked) {
+            arr.push(x[i].name);
+          }
+        }
+        document.getElementById("list").innerHTML = arr.join(", ");
+      }
+
+      function run2() {
+        const arr = [];
+        const x = document.querySelectorAll('input[type="checkbox"]:checked');
+        x.forEach((item) => {
+          arr.push(item.name);
+        });
+        document.getElementById("list").innerHTML = arr.join(", ");
+      }
+    </script>
+  </body>
+</html>

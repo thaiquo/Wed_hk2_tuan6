@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 10px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="dangNhap" action="">
+      <table>
+        <tr>
+          <th colspan="2">THÔNG TIN ĐĂNG NHẬP</th>
+        </tr>
+        <tr>
+          <td>UserName</td>
+          <td id="dn_hoten"></td>
+        </tr>
+        <tr>
+          <td>PassWord</td>
+          <td id="dn_mk"></td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      document.getElementById("dn_hoten").innerHTML =
+        localStorage.getItem("name");
+      document.getElementById("dn_mk").innerHTML = localStorage.getItem("pass");
+    </script>
+    <script></script>
+  </body>
+</html>

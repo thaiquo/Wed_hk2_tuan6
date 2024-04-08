@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 10px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="dangKy" action="">
+      <table>
+        <tr>
+          <th colspan="2">THÔNG TIN ĐĂNG KÝ</th>
+        </tr>
+        <tr>
+          <td>Họ tên</td>
+          <td>
+            <input onblur="ktHoten()" type="text" name="" id="dk_hoten" />
+            <span id="msgHoten" style="color: red">*</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Mật khẩu</td>
+          <td>
+            <input type="text" id="dk_mk" onblur="ktMatKhau()" />
+            <span id="msgMatKhau" style="color: red">*</span>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <a
+              href="#"
+              onclick="tranform()"
+              style="text-decoration: none; color: #000; border: 1px solid #000"
+              >Nhập</a
+            >
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="../JS/main.js"></script>
+    <script></script>
+  </body>
+</html>

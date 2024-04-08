@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        display: inline-block;
+        padding: 5px;
+        color: #000;
+        text-decoration: none;
+        border: 1px solid #000;
+      }
+      span {
+        color: red;
+        margin-left: 4px;
+      }
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        padding: 10px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="2" style="text-align: center">PHÉP TÍNH TOÁN CƠ BẢN</td>
+      </tr>
+      <tr>
+        <td>Nhập số thứ 1</td>
+        <td>
+          <input onblur="ckInput(this)" id="txt1" type="text" /><span id="mg1"
+            >(*)</span
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>Nhập số thứ 2</td>
+        <td>
+          <input onblur="ckInput(this)" id="txt2" type="text" /><span id="mg2"
+            >(*)</span
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a onclick="Cong()" id="cong" href="#">Cộng</a>
+          <a onclick="Tru()" id="tru" href="#">Trừ</a>
+        </td>
+        <td>
+          <a onclick="Chia()" id="nhan" href="#">Chia</a>
+          <a onclick="ChiaDu()" id="chia" href="#">Chia dư</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Kết quả</td>
+        <td><span id="result"></span></td>
+      </tr>
+    </table>
+    <script>
+      function ckInput(e) {
+        var regex = /\d+/;
+        if (!regex.test(e.value)) {
+          e.nextElementSibling.innerHTML = "Giá trị phải là số !";
+          return false;
+        }
+        e.nextElementSibling.innerHTML = "";
+        return true;
+      }
+
+      function Cong() {
+        let x = parseInt(document.getElementById("txt1").value);
+        let y = parseInt(document.getElementById("txt2").value);
+        if (!isNaN(x) && !isNaN(y)) {
+          document.getElementById("result").innerHTML = x + y;
+        } else {
+          document.getElementById("result").innerHTML =
+            "Dữ liệu nhập vào phải là số !";
+        }
+      }
+
+      function Tru() {
+        let x = parseInt(document.getElementById("txt1").value);
+        let y = parseInt(document.getElementById("txt2").value);
+        if (!isNaN(x) && !isNaN(y)) {
+          document.getElementById("result").innerHTML = x - y;
+        } else {
+          document.getElementById("result").innerHTML =
+            "Dữ liệu nhập vào phải là số !";
+        }
+      }
+
+      function Chia() {
+        let x = parseInt(document.getElementById("txt1").value);
+        let y = parseInt(document.getElementById("txt2").value);
+        if (!isNaN(x) && !isNaN(y)) {
+          if (y != 0) {
+            document.getElementById("result").innerHTML = x % y;
+          } else {
+            document.getElementById("result").innerHTML = "Phải là số khác 0 !";
+          }
+        } else {
+          document.getElementById("result").innerHTML =
+            "Dữ liệu nhập vào phải là số !";
+        }
+      }
+
+      function ChiaDu() {
+        let x = parseInt(document.getElementById("txt1").value);
+        let y = parseInt(document.getElementById("txt2").value);
+        if (!isNaN(x) && !isNaN(y)) {
+          if (y != 0) {
+            document.getElementById("result").innerHTML = x / y;
+          } else {
+            document.getElementById("result").innerHTML = "Phải là số khác 0 !";
+          }
+        } else {
+          document.getElementById("result").innerHTML =
+            "Dữ liệu nhập vào phải là số !";
+        }
+      }
+    </script>
+  </body>
+</html>

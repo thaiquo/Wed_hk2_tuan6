@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box" style="border: 1px solid #000; padding: 5px">
+      <h2 style="text-align: center">FORM ĐỊNH DẠNG</h2>
+      <form action="">
+        <table>
+          <tr>
+            <td><label for="">Họ và tên</label></td>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <td><label for="">Chọn</label></td>
+            <td>
+              <input
+                checked
+                type="radio"
+                name="chek"
+                id=""
+                value="back"
+              />Background
+              <input type="radio" name="chek" id="" value="font" />Font
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Chọn màu</label></td>
+            <td>
+              <select name="" id="">
+                <option value="">Chọn màu ...</option>
+                <option value="red">Đỏ</option>
+                <option value="yellow">Vàng</option>
+                <option value="green">Xanh</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <span
+                onclick="changeColor()"
+                style="
+                  background-color: #ccc;
+                  border: 1px solid #000;
+                  padding: 2px;
+                  display: inline-block;
+                  cursor: pointer;
+                "
+                >Đổi màu</span
+              >
+              <input
+                onclick="location.reload(true)"
+                type="reset"
+                value="Cancel"
+                style="cursor: pointer"
+              />
+              >
+            </td>
+          </tr>
+        </table>
+        <p id="text">
+          Một cách tường minh hơn, triết học có thể được định nghĩa là: "những
+          nỗ lực của con người nhằm nghiên cứu một cách hệ thống các cấu trúc
+          căn bản nhất của toàn bộ trải nghiệm mà ta có, nhằm đạt được những
+          niềm tin rõ ràng về mặt khái niệm, được xác nhận về mặt kinh nghiệm và
+          nhất quán về mặt tư duy nhất có thể
+        </p>
+      </form>
+    </div>
+    <script>
+      function changeColor() {
+        const x = document.querySelector('input[type = "radio"]:checked');
+        const value = document.querySelectorAll("option");
+        let color;
+        for (i = 0; i < value.length; i++) {
+          if (value[i].selected) {
+            color = value[i].value;
+          }
+        }
+        if (x.value == "back") {
+          document.getElementById("text").style.backgroundColor = color;
+        } else {
+          document.getElementById("text").style.color = color;
+        }
+      }
+    </script>
+  </body>
+</html>
